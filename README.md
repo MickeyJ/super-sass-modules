@@ -1,8 +1,7 @@
-Express React Views Seed
+Custom Sass Modules & Grid System
 =========================
-###### The best of EJS and Handlebars in one!
+###### Who knew sass was such a beast?
 
-[Checkout a live demo](https://react-express-demo.herokuapp.com/)
 
 __Install the stuff__
 ```bash
