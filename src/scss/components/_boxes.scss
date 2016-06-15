@@ -1,0 +1,56 @@
+@import '../utils/rows';
+
+@mixin boxes{
+
+  .box-1{
+    @include box-1( 225px, black, white );
+    &.blue{ @include box-1( 225px, white, darken(deepskyblue, 10%) ) };
+    &.red{ @include box-1( 225px, white, darken(crimson, 10%) ) };
+    &.green{ @include box-1( 225px, white, lighten(seagreen, 15%) ) };
+  }
+
+  .grid-box{
+    @include grid-box(100px, black, #ccc);
+  }
+
+  .box-container{
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    @extend %pad-vert;
+  }
+
+}
+
+@mixin grid-box($size, $txt-color, $bg-color){
+  @include dead-center-text($size);
+  float: left;
+  width: $size;
+  color: $txt-color;
+  background: $bg-color;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+}
+
+@mixin box-1($height, $text-color, $bg-color){
+  @include rowFactory(1300px, 4, 1vw, bottom);
+  @include box-color($text-color, $bg-color);
+  @include box-border;
+  @include dead-center-text($height);
+  margin: 0.2em;
+  padding: 0.2em;
+}
+
+@mixin box-color($text-color, $bg-color){
+  color: $text-color;
+  background: $bg-color;
+}
+
+@mixin box-border{
+  border: 1px solid #787878;
+  @include rounded(10px);
+}
+
+
+
+

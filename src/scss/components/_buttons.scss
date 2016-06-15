@@ -1,0 +1,42 @@
+
+@mixin buttons {
+  .button {
+    @include button(black, #FAFAFA, white);
+    &.blue  { @include button(black, #FAFAFA, darken(deepskyblue, 5%) ); }
+    &.red   { @include button(black, #FAFAFA, lighten(firebrick, 20%) ); }
+    &.green { @include button(black, #FAFAFA, lighten(mediumseagreen, 5%) ); }
+  }
+}
+
+@mixin button($text-color, $bg-color, $bg-active) {
+  outline: none;
+  transition: all 0.1s;
+  padding: 0.4em 0.6em;
+  font-size: 1.2em;
+  background: $bg-color;
+  @extend %marg-lat;
+  @include no-select-text(pointer);
+  @include color-button($text-color, $bg-active);
+  &:hover {
+    background: darken($bg-color, 5%);
+    @include color-button( $text-color, darken($bg-active, 100%));
+  }
+  &:active {
+    background: $bg-active;
+    @include shadow-button(6px, 10px, #434343);
+    @include color-button( lighten($text-color, 100%), $bg-active);
+  }
+}
+
+@mixin color-button($text-color, $bg-active) {
+  color: $text-color;
+  border: 1px solid mix(black, $bg-active);
+  @include rounded(3px);
+}
+
+@mixin shadow-button($depth, $blur, $color){
+  -webkit-box-shadow: inset 0 10px $depth -#{$blur} $color;
+  -moz-box-shadow: inset 0 10px $depth -#{$blur} $color;
+  -o-box-shadow: inset 0 10px $depth -#{$blur} $color;
+  box-shadow: inset 0 10px $depth -#{$blur} $color;
+}

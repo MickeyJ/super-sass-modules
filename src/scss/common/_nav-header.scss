@@ -1,0 +1,15 @@
+@import '../components/banners';
+@import '../components/nav-link';
+
+#nav-header{
+  @include banners;
+  @include links;
+
+  nav{
+    @extend %pad-vert;
+  }
+
+}
+
+
+

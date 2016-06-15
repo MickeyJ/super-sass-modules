@@ -1,0 +1,12 @@
+
+@function set-width($target, $boxCount, $margin){
+  @return calc((#{$target} / #{$boxCount}) - #{$margin} * 1.5);
+}
+
+@mixin rowFactory($target, $boxCount, $margin, $align: top) {
+  width: set-width($target, $boxCount, $margin);
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: $align;
+  box-sizing: border-box;
+}
