@@ -9,9 +9,7 @@ export default class Index extends Component {
       <DefaultLayout
         title={this.props.title}
         description={this.props.description}>
-
-        <h3>{this.props.title}</h3>
-
+        
         <Boxes count={8} color={'green'}/>
         
       </DefaultLayout>

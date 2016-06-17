@@ -27,7 +27,7 @@ export default class Contact extends Component {
           Green Click
         </button>
 
-        <section id="grid" className="cell-1600-10 cell-950-4 cell-500-2 cell-380-1">
+        <section id="grid" className="cell-1600-8 cell-950-6 cell-500-4 cell-380-2">
           {makeBoxes(40, [])}
         </section>
 
