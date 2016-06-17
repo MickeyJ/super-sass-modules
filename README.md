@@ -2,6 +2,8 @@ Custom Sass Modules & Grid System
 =========================
 ###### Who knew sass was such a beast?
 
+[Live Demo](https://sass-modules.herokuapp.com/)
+
 __Install the stuff__
 ```bash
   
